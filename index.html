@@ -159,21 +159,28 @@ noBtn.addEventListener("click", function() {
 });
 
 function answerYes(){
-    alert("Yaaay! Best choice 😍❤️");
-
-    // تغيير محتوى الصفحة بالكامل
     document.querySelector(".container").innerHTML = `
         <h2>Finally 😍💖</h2>
-        <p style="font-size:18px;">
-        So... you’re officially invited 😏🍽️
+        <p>You said YES 😏🔥</p>
+        <p style="font-size:20px;">
+            It's okay, let's meet on Friday 10/4 for our date 😍
         </p>
-        <p style="font-size:20px; margin-top:15px;">
-        Date at Sizzler? 🔥❤️
-        </p>
-        <p style="margin-top:20px;">
-        I’ll be waiting... don’t be late 😉
-        </p>
+        <p>Be ready... I’ll be waiting 😉</p>
     `;
+
+    // قلوب تطلع 💖
+    setInterval(createHeart, 300);
+}
+
+// animation قلوب
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{ heart.remove(); }, 4000);
 }
 </script>
 
